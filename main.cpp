@@ -12,7 +12,12 @@ int main(int argc, char *argv[])
 	{
     		int side = atoi(argv[1]);
     		int depth = atoi(argv[2]);
-
+		
+		if(depth > 11)
+		{
+			std::cout << "The depth is too big! Not enough buffer to hold a higher depth! The max is 11!" << std::endl;
+			return -2;
+		}
     		sf::RenderWindow window(sf::VideoMode(side, side), "Cantor Circles");
     		Cantor circles(side, depth);
 
